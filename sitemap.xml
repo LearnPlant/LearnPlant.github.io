@@ -2,16 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://example.com/2023/11/29/hello-world/</loc>
-    
-    <lastmod>2023-11-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/2020/03/22/2020.03.22Codes-in-PlantSimulation/</loc>
+    <loc>http://example.com/2020.03.22Codes-in-PlantSimulation/</loc>
     
     <lastmod>2022-10-26</lastmod>
     
@@ -20,7 +11,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2020/05/04/2020.05.04How-to-Use-PlantSimulation/</loc>
+    <loc>http://example.com/2020.05.04How-to-Use-PlantSimulation/</loc>
     
     <lastmod>2022-10-26</lastmod>
     
@@ -29,7 +20,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2020/05/04/2020.05.04How-to-use-AGV/</loc>
+    <loc>http://example.com/2020.05.04How-to-use-AGV/</loc>
     
     <lastmod>2022-10-26</lastmod>
     
@@ -38,7 +29,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2020/05/04/2020.05.04How-to-use-Move/</loc>
+    <loc>http://example.com/2020.05.04How-to-use-Move/</loc>
     
     <lastmod>2022-10-26</lastmod>
     
@@ -47,7 +38,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2020/05/04/2020.05.04How-to-use-TransferStation/</loc>
+    <loc>http://example.com/2020.05.04How-to-use-TransferStation/</loc>
     
     <lastmod>2022-10-26</lastmod>
     
@@ -56,7 +47,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2020/05/05/2020.05.05Pull-or-Push/</loc>
+    <loc>http://example.com/2020.05.05Pull-or-Push/</loc>
     
     <lastmod>2022-10-26</lastmod>
     
@@ -65,7 +56,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2020/05/05/2020.05.05Use-CAD-as-Background/</loc>
+    <loc>http://example.com/2020.05.05Use-CAD-as-Background/</loc>
     
     <lastmod>2022-10-26</lastmod>
     
@@ -74,7 +65,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2021/06/17/2021.06.17PlantSimulation-Codes/</loc>
+    <loc>http://example.com/2021.06.17PlantSimulation-Codes/</loc>
     
     <lastmod>2022-10-26</lastmod>
     

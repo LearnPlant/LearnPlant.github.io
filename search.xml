@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Plant Simulation 常用的代码</title>
+      <link href="/2021.06.17PlantSimulation-Codes/"/>
+      <url>/2021.06.17PlantSimulation-Codes/</url>
+      
+        <content type="html"><![CDATA[<h1 id="plant-simulation-常用的代码"><a href="#plant-simulation-常用的代码" class="headerlink" title="plant simulation 常用的代码"></a>plant simulation 常用的代码</h1><h2 id="清空控制台"><a href="#清空控制台" class="headerlink" title="清空控制台"></a>清空控制台</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clearConsole</span><br></pre></td></tr></table></figure><h2 id="统计故障时间"><a href="#统计故障时间" class="headerlink" title="统计故障时间"></a>统计故障时间</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if ?.failed 修复时间统计[1,修复时间统计.ydim+1]:=?.getDisruptionendtime-eventController.simTime</span><br><span class="line">end</span><br></pre></td></tr></table></figure><h2 id="查找表格的内容"><a href="#查找表格的内容" class="headerlink" title="查找表格的内容"></a>查找表格的内容</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var m,n :integer</span><br><span class="line">    if 数据表.find(&quot;wwd&quot;)</span><br><span class="line">    n := 数据表.cursorx</span><br><span class="line">    m := 数据表.cursory</span><br><span class="line">    print n,m</span><br><span class="line">    end</span><br></pre></td></tr></table></figure><h2 id="打印受限制的元素个数"><a href="#打印受限制的元素个数" class="headerlink" title="打印受限制的元素个数"></a>打印受限制的元素个数</h2><p>新建Method，写入如下代码：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print numOfLimitedObjects</span><br></pre></td></tr></table></figure><h2 id="定义一维数组并打印"><a href="#定义一维数组并打印" class="headerlink" title="定义一维数组并打印"></a>定义一维数组并打印</h2><p>案例一</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">clearconsole--清空控制台</span><br><span class="line">    var arry : integer[3]--定义数组为整形，3个元素</span><br><span class="line">    var i : integer--定义循环变量</span><br><span class="line">    i := 1</span><br><span class="line">    arry[1] := 10--对数组进行赋值</span><br><span class="line">    arry[2] := 101</span><br><span class="line">    arry[3] := 103</span><br><span class="line">    for i := 1 to 3--循环打印数组元素</span><br><span class="line">    print arry [i]</span><br><span class="line">    next</span><br></pre></td></tr></table></figure><p>案例二</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">clearconsole--清空控制台</span><br><span class="line">    var i : integer--定义循环变量</span><br><span class="line">    var arry : integer[]--定义数组为整形，元素数留空</span><br><span class="line">    --定义一维数组元素</span><br><span class="line">    arry := makearray(1,2,3,1,3,13)</span><br><span class="line">    for i := 1 to 6--打印数组元素</span><br><span class="line">    print arry [i]</span><br><span class="line">    next</span><br></pre></td></tr></table></figure><h2 id="定义二维数组"><a href="#定义二维数组" class="headerlink" title="定义二维数组"></a>定义二维数组</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">clearconsole--清空控制台</span><br><span class="line">    var arry :integer[2,2]--定义4个整数元素的数组</span><br><span class="line">    --给元素赋值</span><br><span class="line">    arry[1,1] := 3</span><br><span class="line">    arry[1,2] := 4</span><br><span class="line">    arry[2,1] := 5</span><br><span class="line">    arry[2,2] := 6</span><br><span class="line">    print arry[2,1]--打印数组</span><br></pre></td></tr></table></figure><h2 id="使用嵌套循环打印二维数组所有元素"><a href="#使用嵌套循环打印二维数组所有元素" class="headerlink" title="使用嵌套循环打印二维数组所有元素"></a>使用嵌套循环打印二维数组所有元素</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">clearconsole--清空控制台</span><br><span class="line">    var arry :integer[2,2]--定义4个整数元素的数组</span><br><span class="line">--给元素赋值   </span><br><span class="line">    arry[1,1] := 3</span><br><span class="line">    arry[1,2] := 4</span><br><span class="line">    arry[2,1] := 5</span><br><span class="line">    arry[2,2] := 6</span><br><span class="line">    --定义内外层的循环变量，遍历打印数组所有元素</span><br><span class="line">    var j: integer := 1</span><br><span class="line">    var i: integer := 1</span><br><span class="line">    for j := 1 to 2</span><br><span class="line">    for i := 1 to 2</span><br><span class="line">    print arry[i,j]</span><br><span class="line">    next</span><br><span class="line">    print &quot;-&quot;</span><br><span class="line">    next</span><br></pre></td></tr></table></figure><h2 id="switch-case的用法"><a href="#switch-case的用法" class="headerlink" title="switch case的用法"></a>switch case的用法</h2><p>注意：simtalk 2.0 已经弃用了inspect .. when ..的句法，<br>旧的用法如下：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">is</span><br><span class="line">    num:integer;</span><br><span class="line">do</span><br><span class="line">    num:=2;</span><br><span class="line">      inspect num</span><br><span class="line">        when 1 then print &quot;Num is 1.&quot;; </span><br><span class="line">        when 2 then print &quot;Num is 2.&quot;; </span><br><span class="line">        when 3 then print &quot;Num is 3.&quot;; </span><br><span class="line">    -- and so on</span><br><span class="line">    else</span><br><span class="line">      print &quot;Not 1, not 2, not 3 !&quot;; </span><br><span class="line">      end;</span><br><span class="line">    end;</span><br></pre></td></tr></table></figure><p>新的用法</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var n : integer := 1</span><br><span class="line">    switch n</span><br><span class="line">    case 1 </span><br><span class="line">     print &quot;num is 1&quot;</span><br><span class="line">    case 2</span><br><span class="line">     print &quot;num is 2&quot;</span><br><span class="line">    case 3</span><br><span class="line">     print &quot;num is 3&quot;</span><br><span class="line">    else</span><br><span class="line">    print &quot;no num&quot;</span><br><span class="line">    end</span><br></pre></td></tr></table></figure><h2 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var i : integer := 1</span><br><span class="line">    while i &lt; 10</span><br><span class="line">    i := i +1</span><br><span class="line">    end</span><br><span class="line">    </span><br><span class="line">    print i</span><br></pre></td></tr></table></figure><h2 id="repeat循环"><a href="#repeat循环" class="headerlink" title="repeat循环"></a>repeat循环</h2><p>类似于c语言的 do..while..循环</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var i : integer</span><br><span class="line">    i:= 10</span><br><span class="line">    repeat </span><br><span class="line">    i := i +1</span><br><span class="line">    print i</span><br><span class="line">    until i &gt; 20</span><br><span class="line">    </span><br><span class="line">    print i</span><br></pre></td></tr></table></figure><h2 id="For循环"><a href="#For循环" class="headerlink" title="For循环"></a>For循环</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var i : integer</span><br><span class="line">     i := 1</span><br><span class="line">    for i := 1 to 100</span><br><span class="line">    print i</span><br><span class="line">    next</span><br></pre></td></tr></table></figure><h2 id="Plant-Simulation里输入数据"><a href="#Plant-Simulation里输入数据" class="headerlink" title="Plant Simulation里输入数据"></a>Plant Simulation里输入数据</h2><p>使用prompt功能</p><p>The function prompt asks the user to enter data. </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-- method for querying the number of pallets in a model </span><br><span class="line">-&gt; integer</span><br><span class="line">var s: string</span><br><span class="line">-- gets the number of pallets</span><br><span class="line">s := prompt(&quot;Enter number&quot;, &quot;of pallets&quot;)</span><br><span class="line">return str_to_num(s) </span><br></pre></td></tr></table></figure><p>举例：使用用户输入的值来计算圆的周长</p><p>用户输入半径</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-&gt;integer--定义需要的返回值是整形</span><br><span class="line">var s :string  --输入值是一个字符串类型，所以需要定义一个字符串型的变量</span><br><span class="line">s:= prompt(&quot;请输入圆的半径&quot;)--用户输入</span><br><span class="line">return str_to_num(s)--将输入的值返回，并且转换为数字类型</span><br></pre></td></tr></table></figure><p>计算面积的方法<br>–定义一个计算园面积的方法</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var r :integer</span><br><span class="line">var L :integer</span><br><span class="line">r := 数据输入</span><br><span class="line">L := r * pi</span><br><span class="line">print L</span><br></pre></td></tr></table></figure><p>以上需要两个方法来实现计算。以下可以在一个方法内实现：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var l : real</span><br><span class="line">var m : real</span><br><span class="line">var s : real</span><br><span class="line">var s1 :string</span><br><span class="line">var s2 :string</span><br><span class="line"></span><br><span class="line">s1 := prompt(&quot;请输入长方形的长：&quot;)</span><br><span class="line">l := str_to_num(s1)</span><br><span class="line">s2 := prompt(&quot;请输入长方形的宽：&quot;)</span><br><span class="line">m := str_to_num(s2)</span><br><span class="line">s := l*m</span><br><span class="line">print s</span><br></pre></td></tr></table></figure><h2 id="传递两个参数"><a href="#传递两个参数" class="headerlink" title="传递两个参数"></a>传递两个参数</h2><p>传递的方法：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">param m , n :integer -&gt; integer</span><br><span class="line">if m &gt; n</span><br><span class="line">return m</span><br><span class="line">else </span><br><span class="line">return n</span><br><span class="line">end</span><br></pre></td></tr></table></figure><p>返回原程序</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var s : integer</span><br><span class="line">s := 比较大小(10,20)</span><br><span class="line">print s</span><br></pre></td></tr></table></figure><h2 id="传递1个参数"><a href="#传递1个参数" class="headerlink" title="传递1个参数"></a>传递1个参数</h2><p>程序1</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var L : integer</span><br><span class="line">L := 周长函数(125)</span><br><span class="line">print L</span><br></pre></td></tr></table></figure><p>程序2</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">param n : integer -&gt; real</span><br><span class="line">result := 2 * pi * n</span><br><span class="line">return</span><br></pre></td></tr></table></figure><h2 id="waituntil-和-stopuntil"><a href="#waituntil-和-stopuntil" class="headerlink" title="waituntil 和 stopuntil"></a>waituntil 和 stopuntil</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">waituntil condition [prio number] [wait timespan:time]</span><br><span class="line">stopuntil condition [prio number] [wait timespan:time]</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">prio number 中的number越大，优先度越高</span><br><span class="line">三个方法分别写入以下方法：</span><br><span class="line"></span><br><span class="line">waituntil 缓冲区.empty prio 1</span><br><span class="line">@.move(缓冲区)</span><br><span class="line"></span><br><span class="line">waituntil 缓冲区.empty prio 2</span><br><span class="line">@.move(缓冲区)</span><br><span class="line"></span><br><span class="line">waituntil 缓冲区.empty prio 3</span><br><span class="line">@.move(缓冲区)</span><br><span class="line"></span><br><span class="line">其中prio 3的级别是最高的。一直等到缓冲区空，才会移动，所以每次缓冲区只有1个零件。</span><br><span class="line"></span><br><span class="line">stopuntil 缓冲区.empty prio 1</span><br><span class="line">@.move(缓冲区)</span><br><span class="line"></span><br><span class="line">stopuntil 缓冲区.empty prio 2</span><br><span class="line">@.move(缓冲区)</span><br><span class="line"></span><br><span class="line">stopuntil 缓冲区.empty prio 3</span><br><span class="line">@.move(缓冲区)</span><br></pre></td></tr></table></figure><p>　　其中prio 3的级别是最高的。一直停止到缓冲区空，所以缓冲区会有<br><img src="https://i.imgur.com/NjMGeYP.png"><br><img src="https://i.imgur.com/wMIjXUR.png"></p><p>#设定设备或者工位的定期保养策略</p><p>打开工位或者机器人，在故障里新增Failure，填写如下，<br>如果故障持续时间duration为0，则表示没有故障。如果不填写间隔，则表示只出现一次故障。</p><blockquote><ol><li>开始start：即仿真开始多久后开始故障。</li><li>间隔duration：每间隔多久发生故障。</li><li>持续时间interval：故障的持续时间，即维护时间。</li><li>下图即为每1000h的工作时间，保养3h。</li></ol></blockquote><p><img src="https://i.imgur.com/yRGL4TE.png"><br><img src="https://i.imgur.com/3pgRroc.png"></p><p>故障时间选择：</p><blockquote><ol><li>仿真时间simulation time：与系统的仿真时间有关，而与其他，如工作站的作业时间无关。</li><li>操作时间operating  time：For this setting,Plant Simulation consumes the time you have entered as the interval, if the object is not paused (working or waiting).</li><li>处理时间processing time：For this setting, Plant Simulation consumes the time you have entered as the interval while the object is working (not paused, waiting, or unplanned).</li></ol></blockquote><p><img src="https://i.imgur.com/EAIngDa.png"></p><p>还可以通过设置多个Failure的参数来使模型更加的贴近生产。</p><ol><li>设置TMP（Total Productive Maintenance的缩略语，中文译名叫全员生产维护，又译为全员生产保全）为每周保养1次，1次2H.<br><img src="https://i.imgur.com/yRGL4TE.png"></li><li>工装更换时间，每3H，更换一次工装，耗时20min。<br><img src="https://i.imgur.com/WBxjctv.png"></li><li>随机故障，按照RO，95%，故障修复时间10min.<br><img src="https://i.imgur.com/hzttrQw.png"></li></ol><h2 id="如何设置缓冲区的大小？需要学习"><a href="#如何设置缓冲区的大小？需要学习" class="headerlink" title="如何设置缓冲区的大小？需要学习"></a>如何设置缓冲区的大小？需要学习</h2><h2 id="重置数据表的命令"><a href="#重置数据表的命令" class="headerlink" title="重置数据表的命令"></a>重置数据表的命令</h2><h2 id="移动零件至传送带指定位置"><a href="#移动零件至传送带指定位置" class="headerlink" title="移动零件至传送带指定位置"></a>移动零件至传送带指定位置</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@.move(传送器11,3)</span><br></pre></td></tr></table></figure><h2 id="删除表中的主数据"><a href="#删除表中的主数据" class="headerlink" title="删除表中的主数据"></a>删除表中的主数据</h2><p>　　此命令为删除表中的数据，而非删除表</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">table.delete</span><br></pre></td></tr></table></figure><h2 id="transfer-station的用法"><a href="#transfer-station的用法" class="headerlink" title="transfer station的用法"></a>transfer station的用法</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工作 </category>
+          
+          <category> Plant Simulation </category>
+          
+          <category> 代码 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Plant Simulation </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>推动或者拉动的生产模式</title>
+      <link href="/2020.05.05Pull-or-Push/"/>
+      <url>/2020.05.05Pull-or-Push/</url>
+      
+        <content type="html"><![CDATA[<h1 id="推动或者拉动的生产模式"><a href="#推动或者拉动的生产模式" class="headerlink" title="推动或者拉动的生产模式"></a>推动或者拉动的生产模式</h1><h2 id="一、建立模型的思路："><a href="#一、建立模型的思路：" class="headerlink" title="一、建立模型的思路："></a>一、建立模型的思路：</h2><h3 id="1、所有模型的逻辑思路在敲代码前，先进行梳理。使用excle和viso。在有问题时，可以及时发现。"><a href="#1、所有模型的逻辑思路在敲代码前，先进行梳理。使用excle和viso。在有问题时，可以及时发现。" class="headerlink" title="1、所有模型的逻辑思路在敲代码前，先进行梳理。使用excle和viso。在有问题时，可以及时发现。"></a>1、所有模型的逻辑思路在敲代码前，先进行梳理。使用excle和viso。在有问题时，可以及时发现。</h3><p><img src="https://fastly.jsdelivr.net/gh/LearnPlant/Pic-For-Plant@master/2020.05.05Push.jpg" alt="梳理建模的思路"><br>2、将经过的零件记录到主Bom中。类似于生产过程中的过点扫描。</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">test</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工作 </category>
+          
+          <category> Plant Simulation </category>
+          
+          <category> 模型 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 生产模式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>导入cad作为背景图</title>
+      <link href="/2020.05.05Use-CAD-as-Background/"/>
+      <url>/2020.05.05Use-CAD-as-Background/</url>
+      
+        <content type="html"><![CDATA[<h1 id="导入cad作为背景图"><a href="#导入cad作为背景图" class="headerlink" title="导入cad作为背景图"></a>导入cad作为背景图</h1><h2 id="一、导入cad文件"><a href="#一、导入cad文件" class="headerlink" title="一、导入cad文件"></a>一、导入cad文件</h2><h3 id="检查cad文件的默认单位是什么？"><a href="#检查cad文件的默认单位是什么？" class="headerlink" title="检查cad文件的默认单位是什么？"></a>检查cad文件的默认单位是什么？</h3><p>　　在cad文件中输入命令，并查看单位是否为毫米</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">units</span><br></pre></td></tr></table></figure><h3 id="如果单位是毫米"><a href="#如果单位是毫米" class="headerlink" title="如果单位是毫米"></a>如果单位是毫米</h3><p>　　直接将cad文件拖入到模型中即可，比例选择为1.0。</p><h3 id="如果单位不是毫米"><a href="#如果单位不是毫米" class="headerlink" title="如果单位不是毫米"></a>如果单位不是毫米</h3><p>　　输入命令进行转化：</p><p>　　输入比例因子的命令：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sc</span><br></pre></td></tr></table></figure><p>　　输入需要调整的比例：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0.5</span><br></pre></td></tr></table></figure><p>　　应用即可。</p><h2 id="二、导入图片"><a href="#二、导入图片" class="headerlink" title="二、导入图片"></a>二、导入图片</h2><p>　　打印cad文件为png格式。</p><h3 id="1、选择打印为png。"><a href="#1、选择打印为png。" class="headerlink" title="1、选择打印为png。"></a>1、选择打印为png。</h3><h3 id="2、选择打印窗口，可自行选择。"><a href="#2、选择打印窗口，可自行选择。" class="headerlink" title="2、选择打印窗口，可自行选择。"></a>2、选择打印窗口，可自行选择。</h3><h3 id="3、打印比例设置为1-50（1像素为50单位）-因为Plant-Simulation里的像素比例因子是0-05（常规-比例因子）-即一个像素对应0-05m-50mm，所以cad中为1-50。"><a href="#3、打印比例设置为1-50（1像素为50单位）-因为Plant-Simulation里的像素比例因子是0-05（常规-比例因子）-即一个像素对应0-05m-50mm，所以cad中为1-50。" class="headerlink" title="3、打印比例设置为1:50（1像素为50单位）.因为Plant  Simulation里的像素比例因子是0.05（常规-&gt;比例因子）.即一个像素对应0.05m&#x3D;50mm，所以cad中为1:50。"></a>3、打印比例设置为1:50（1像素为50单位）.因为Plant  Simulation里的像素比例因子是0.05（常规-&gt;比例因子）.即一个像素对应0.05m&#x3D;50mm，所以cad中为1:50。</h3><p><img src="https://fastly.jsdelivr.net/gh/LearnPlant/Pic-For-Plant@master/2020.05.05Cad-Background.png" alt="Plant  Simulation比例因子"></p><h3 id="4、新建Frame。"><a href="#4、新建Frame。" class="headerlink" title="4、新建Frame。"></a>4、新建Frame。</h3><h3 id="5、右键Frame，编辑图标。"><a href="#5、右键Frame，编辑图标。" class="headerlink" title="5、右键Frame，编辑图标。"></a>5、右键Frame，编辑图标。</h3><h3 id="6、导入，刚才打印的png文件。"><a href="#6、导入，刚才打印的png文件。" class="headerlink" title="6、导入，刚才打印的png文件。"></a>6、导入，刚才打印的png文件。</h3><h3 id="7、名称改为：background"><a href="#7、名称改为：background" class="headerlink" title="7、名称改为：background"></a>7、名称改为：background</h3><h3 id="8、应用，即可。"><a href="#8、应用，即可。" class="headerlink" title="8、应用，即可。"></a>8、应用，即可。</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工作 </category>
+          
+          <category> Plant Simulation </category>
+          
+          <category> 背景 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> cad </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>PlantSimulation常规操作</title>
+      <link href="/2020.05.04How-to-Use-PlantSimulation/"/>
+      <url>/2020.05.04How-to-Use-PlantSimulation/</url>
+      
+        <content type="html"><![CDATA[<h1 id="PlantSimulation常规操作"><a href="#PlantSimulation常规操作" class="headerlink" title="PlantSimulation常规操作"></a>PlantSimulation常规操作</h1><h2 id="1、检查模型中是否有未连接的实体。"><a href="#1、检查模型中是否有未连接的实体。" class="headerlink" title="1、检查模型中是否有未连接的实体。"></a>1、检查模型中是否有未连接的实体。</h2><p>　　点击：常规-不相连对象，如果未相连，会有选中提示。</p><p><img src="https://fastly.jsdelivr.net/gh/LearnPlant/Pic-For-Plant@master/2020.05.04Check.png"></p><p>2、旋转实体的快捷键</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+T</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工作 </category>
+          
+          <category> Plant Simulation </category>
+          
+          <category> 常规操作 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Plant Simulation </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>AGV的用法</title>
+      <link href="/2020.05.04How-to-use-AGV/"/>
+      <url>/2020.05.04How-to-use-AGV/</url>
+      
+        <content type="html"><![CDATA[<h1 id="AGV的用法"><a href="#AGV的用法" class="headerlink" title="AGV的用法"></a>AGV的用法</h1><h2 id="一、设置AGV的安全距离。"><a href="#一、设置AGV的安全距离。" class="headerlink" title="一、设置AGV的安全距离。"></a>一、设置AGV的安全距离。</h2><p>&emsp;&emsp;打开AGV小车，选择控件，设置距离为任意值，下图为2m，创建控制方法。输入以下代码。</p><p><img src="https://fastly.jsdelivr.net/gh/LearnPlant/Pic-For-Plant@master/2020.05.04AGV.png" alt="AGV小车属性"></p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">param distanceIsBelowLimit: boolean</span><br><span class="line">var mu1 := @</span><br><span class="line">var mu2 := ?</span><br><span class="line"><span class="keyword">if</span> distanceIsBelowLimit </span><br><span class="line">mu2.speed := <span class="number">0</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">mu2.speed := mu1.speed</span><br><span class="line">end</span><br></pre></td></tr></table></figure><p>代码解释：<br>&emsp;&emsp;设定两个变量mu1和mu2，mu1是当前的AGV小车，mu2是与当前小车相邻的前一个小车。如果distanceIsBelowLimit 是true的话。那么mu2的速度变为0，否则的话，mu2的速度等于mu1的速度。</p><p>&emsp;&emsp;官方文档对distanceIsBelowLimit 的解释如下：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The parameter DistanceIsBelowLimit of data type boolean is true when the distance becomes too small. It is false when the distance becomes too great. </span><br><span class="line">当距离变得太小时，数据类型为boolean的参数DistanceIsBelowLimit为true。 当距离太大时，为false。</span><br><span class="line">The anonymous identifier ? designates the part (MU) for which you entered the distance control and the distance. The anonymous identifier @ designates the part (MU) for which the distance became too great or too small. At the point in time at which the distance control is called @ is located in front of ? in the direction of motion of ?. </span><br></pre></td></tr></table></figure><p>&emsp;&emsp;及示例代码：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-- ? designates the transporter with the control </span><br><span class="line">-- @ designates the calling transporter, which falls short of or exceeds the distance </span><br><span class="line">param distanceIsBelowLimit: boolean </span><br><span class="line">if distanceIsBelowLimit   </span><br><span class="line">?.Speed := @.Speed -- adapt speed of transporter in front </span><br><span class="line">else   </span><br><span class="line">?.speed := ?.Origin.Speed -- switch back to original speed </span><br><span class="line">end</span><br></pre></td></tr></table></figure><h2 id="二、设置AGV的分流"><a href="#二、设置AGV的分流" class="headerlink" title="二、设置AGV的分流"></a>二、设置AGV的分流</h2><p>&emsp;&emsp;对AGV设置控制策略，当满足条件时，进行分流行走。</p><p><img src="https://fastly.jsdelivr.net/gh/LearnPlant/Pic-For-Plant@master/2020.05.05AGV.png" alt="AGV分流设置"></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">param SensorID: integer, Front: boolean, BookPos: boolean</span><br><span class="line">if 轨道3.nummu &lt; 轨道3.capacity</span><br><span class="line">@.destination :=轨道1 </span><br><span class="line">else</span><br><span class="line">@.destination :=轨道2</span><br><span class="line">end</span><br></pre></td></tr></table></figure><p>代码解释：</p><p>&emsp;&emsp;如果轨道3上的小车数量小于其容量，则小车目的地设为轨道1。</p><p>&emsp;&emsp;如果轨道3上的小车数量大于等于其容量，则小车目的地设为轨道2。</p><h2 id="三、AGV变换速度"><a href="#三、AGV变换速度" class="headerlink" title="三、AGV变换速度"></a>三、AGV变换速度</h2><p>&emsp;&emsp;使用代码对AGV的速度进行变换。加入原始速度为1m&#x2F;s。</p><p><img src="https://fastly.jsdelivr.net/gh/LearnPlant/Pic-For-Plant@master/2020.05.06AGV.png" alt="修改AGV运行速度"></p><p>&emsp;&emsp;在轨道上增加传感器，输入以下代码：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@.speed := 30</span><br></pre></td></tr></table></figure><p>&emsp;&emsp;当AGV经过传感器时，既可修改AGV的运行速度。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工作 </category>
+          
+          <category> Plant Simulation </category>
+          
+          <category> 实体 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> AGV </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Move的用法</title>
+      <link href="/2020.05.04How-to-use-Move/"/>
+      <url>/2020.05.04How-to-use-Move/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Move的用法"><a href="#Move的用法" class="headerlink" title="Move的用法"></a>Move的用法</h1><h2 id="1、从传送带移动到传送带上。"><a href="#1、从传送带移动到传送带上。" class="headerlink" title="1、从传送带移动到传送带上。"></a>1、从传送带移动到传送带上。</h2><p>&emsp;&emsp;在传送带上创建传感器，创建一个Method，使用Method来控制传送带上的物料移动。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@.move（传送带1）</span><br></pre></td></tr></table></figure><p>&emsp;&emsp;如果需要移动到传送带上某一个位置，如3m位置。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@.move（传送带1,3）</span><br></pre></td></tr></table></figure><p><img src="https://fastly.jsdelivr.net/gh/LearnPlant/Pic-For-Plant@master/2020.05.04Move.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工作 </category>
+          
+          <category> Plant Simulation </category>
+          
+          <category> SimTalk </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Plant Simulation </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>TransferStation的用法</title>
+      <link href="/2020.05.04How-to-use-TransferStation/"/>
+      <url>/2020.05.04How-to-use-TransferStation/</url>
+      
+        <content type="html"><![CDATA[<h1 id="TransferStation的用法"><a href="#TransferStation的用法" class="headerlink" title="TransferStation的用法"></a>TransferStation的用法</h1><p>1、加载 load：将“零件来源”的零件加载到“目标位置的”容器上。</p><p>2、卸载unload：将“零件来源”的零件从容器中卸载到“目标位置的”上。</p><p>3、重新加载reload：将“零件来源”的零件从容器中加载到“目标位置的”容器上。</p><p>4、移动move：将“零件来源”的零件移动到“目标位置”上。</p><p><img src="https://fastly.jsdelivr.net/gh/LearnPlant/Pic-For-Plant@master/2020.05.03Transferstation.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工作 </category>
+          
+          <category> Plant Simulation </category>
+          
+          <category> 实体 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> transferstation </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Plant Simulation常用代码</title>
+      <link href="/2020.03.22Codes-in-PlantSimulation/"/>
+      <url>/2020.03.22Codes-in-PlantSimulation/</url>
+      
+        <content type="html"><![CDATA[<h1 id="PlantSimulation常用代码"><a href="#PlantSimulation常用代码" class="headerlink" title="PlantSimulation常用代码"></a>PlantSimulation常用代码</h1><h2 id="1、清空控制台"><a href="#1、清空控制台" class="headerlink" title="1、清空控制台"></a>1、清空控制台</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clearConsole</span><br></pre></td></tr></table></figure><h2 id="2、统计故障时间"><a href="#2、统计故障时间" class="headerlink" title="2、统计故障时间"></a>2、统计故障时间</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if ?.failed</span><br><span class="line">    修复时间统计[1,修复时间统计.ydim+1]:=?.getDisruptionendtime-eventController.simTime</span><br><span class="line">end</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工作 </category>
+          
+          <category> Plant Simulation </category>
+          
+          <category> 常用代码 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Plant Simulation </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
